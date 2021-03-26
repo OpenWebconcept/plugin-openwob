@@ -1,0 +1,13 @@
+{
+  "name": "openwob-docs",
+  "version": "1.0.0",
+  "description": "OpenWOB docs",
+  "dependencies": {
+    "redoc-cli": "^0.10.4"
+  },
+  "scripts": {
+    "doc-build": "redoc-cli bundle ./specs/openapi.yaml --output ./index.html -t templates/template.hbs"
+  },
+  "author": "Yard | Digital Agency",
+  "license": "ISC"
+}

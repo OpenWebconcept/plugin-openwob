@@ -1,0 +1,53 @@
+{
+  "name": "plugin/openwob",
+  "description": "OpenWOB plugin",
+  "authors": [
+    {
+      "name": "Yard | Digital Agency",
+      "email": "info@yard.nl",
+      "homepage": "https://www.yard.nl"
+    }
+  ],
+  "type": "wordpress-plugin",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "php": ">=7.2"
+  },
+  "require-dev": {
+    "mockery/mockery": "1.0.*",
+    "phpunit/phpunit": "~8.0",
+    "10up/wp_mock": "dev-master",
+    "friendsofphp/php-cs-fixer": "^2.0",
+    "szepeviktor/phpstan-wordpress": "0.6.*",
+    "symfony/var-dumper": "^5.1",
+    "wpackagist-plugin/elasticpress":"^3.0",
+    "zircote/swagger-php": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Yard\\OpenWOB\\": "./src/OpenWOB"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Yard\\OpenWOB\\Tests\\": "./tests/Unit"
+    }
+  },
+  "scripts": {
+    "doc": "clear && php ./docs/openapi-create.php > ./docs/specs/openapi.yaml",
+    "format": "./vendor/bin/php-cs-fixer fix",
+    "phpstan": "./vendor/bin/phpstan analyse --no-progress",
+    "unit": "clear && ./vendor/bin/phpunit --testdox --stderr --testsuite 'Unit Test Suite' --colors=always",
+    "unit-coverage": "clear && ./vendor/bin/phpunit --stderr --testsuite 'Unit Test Suite' --prepend tests/xdebug-filter.php --colors=always --coverage-html ./tests/coverage",
+    "integration": "clear && ./vendor/bin/phpunit --stderr --testsuite 'Integration Test Suite' --colors=always",
+    "test": [
+      "@unit",
+      "@integration"
+    ]
+  }
+}

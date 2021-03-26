@@ -1,0 +1,8 @@
+# Files
+.DS_Store
+.php_cs.cache
+.phpunit.result.cache
+
+# Folders
+vendor
+wp-content

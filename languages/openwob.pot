@@ -1,0 +1,201 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Yard OpenWOB\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-26 09:42+0100\n"
+"POT-Revision-Date: Fri Nov 27 2015 13:26:26 GMT+0100 (W. Europe Standard Time)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: Yard | Digital Agency <inf@yard.nl>\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;__:1;"
+"_e:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;_x:1,2c;"
+"_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;esc_attr__:1;"
+"esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-SearchPath-0: src\n"
+"X-Poedit-SearchPath-1: config\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+"X-Poedit-SearchPathExcluded-2: vendor\n"
+
+#: config/openwob/metaboxes.php:6
+msgid "Data"
+msgstr ""
+
+#: config/openwob/metaboxes.php:50
+msgid "ID"
+msgstr ""
+
+#: config/openwob/metaboxes.php:55
+msgid "wob_Titel"
+msgstr ""
+
+#: config/openwob/metaboxes.php:60
+msgid "Wobverzoek informatie"
+msgstr ""
+
+#: config/openwob/metaboxes.php:65
+msgid "Status"
+msgstr ""
+
+#: config/openwob/metaboxes.php:76
+msgid "Tijdstip laatste wijziging"
+msgstr ""
+
+#: config/openwob/metaboxes.php:93
+msgid "Volgnummer"
+msgstr ""
+
+#: config/openwob/metaboxes.php:98
+msgid "Behandelend_bestuursorgaan"
+msgstr ""
+
+#: config/openwob/metaboxes.php:103
+msgid "Verzoeker"
+msgstr ""
+
+#: config/openwob/metaboxes.php:114
+msgid "Ontvanger_informatieverzoek"
+msgstr ""
+
+#: config/openwob/metaboxes.php:119
+msgid "Termijnoverschrijding"
+msgstr ""
+
+#: config/openwob/metaboxes.php:129
+msgid "Behandelstatus"
+msgstr ""
+
+#: config/openwob/metaboxes.php:140
+msgid "Ontvangstdatum"
+msgstr ""
+
+#: config/openwob/metaboxes.php:154
+msgid "Besluitdatum"
+msgstr ""
+
+#: config/openwob/metaboxes.php:168
+msgid "Besluit"
+msgstr ""
+
+#: config/openwob/metaboxes.php:180
+msgid "URL_informatieverzoek"
+msgstr ""
+
+#: config/openwob/metaboxes.php:185
+msgid "URL_inventarisatielijst"
+msgstr ""
+
+#: config/openwob/metaboxes.php:190
+msgid "URL_besluit"
+msgstr ""
+
+#: config/openwob/metaboxes.php:195
+msgid "Postcodegebied"
+msgstr ""
+
+#: config/openwob/metaboxes.php:200
+msgid "BAG_ID"
+msgstr ""
+
+#: config/openwob/metaboxes.php:205
+msgid "BGT_ID"
+msgstr ""
+
+#: config/openwob/metaboxes.php:210
+msgid "Themas"
+msgstr ""
+
+#: config/openwob/metaboxes.php:216
+msgid "Hoofdthema"
+msgstr ""
+
+#: config/openwob/metaboxes.php:226
+msgid "Subthema"
+msgstr ""
+
+#: config/openwob/metaboxes.php:235
+msgid "Aanvullend_thema"
+msgstr ""
+
+#: config/openwob/metaboxes.php:246
+msgid "Geografisch_gebied"
+msgstr ""
+
+#: config/openwob/metaboxes.php:251
+msgid "Geografische_positie"
+msgstr ""
+
+#: config/openwob/metaboxes.php:256
+msgid "Longitude"
+msgstr ""
+
+#: config/openwob/metaboxes.php:261
+msgid "Lattitude"
+msgstr ""
+
+#: config/openwob/metaboxes.php:268
+msgid "COORDS"
+msgstr ""
+
+#: config/openwob/metaboxes.php:273
+msgid "X"
+msgstr ""
+
+#: config/openwob/metaboxes.php:278
+msgid "Y"
+msgstr ""
+
+#: config/openwob/metaboxes.php:285
+msgid "Bijlagen"
+msgstr ""
+
+#: config/openwob/metaboxes.php:291
+msgid "Type_Bijlage"
+msgstr ""
+
+#: config/openwob/metaboxes.php:301
+msgid "Status_Bijlage"
+msgstr ""
+
+#: config/openwob/metaboxes.php:312
+msgid "Tijdstip_laatste_wijziging_bijlage"
+msgstr ""
+
+#: config/openwob/metaboxes.php:327
+msgid "Titel_Bijlage"
+msgstr ""
+
+#: config/openwob/metaboxes.php:332
+msgid "URL_Bijlage"
+msgstr ""
+
+#: src/Base/Foundation/DependencyChecker.php:72
+msgid "The following plugins are required to use the OpenWOB:"
+msgstr ""
+
+#: src/Base/Foundation/DependencyChecker.php:112
+msgid "Class does not exist"
+msgstr ""
+
+#: src/Base/Foundation/DependencyChecker.php:132
+msgid "Inactive"
+msgstr ""
+
+#: src/Base/Foundation/DependencyChecker.php:140
+msgid "Minimal version:"
+msgstr ""
+
+#: src/Base/RestAPI/ItemFields/ConnectedField.php:48
+#: src/Base/RestAPI/ItemFields/ConnectedThemeItemField.php:48
+#, php-format
+msgid "Connection type \"%s\" does not exist"
+msgstr ""
