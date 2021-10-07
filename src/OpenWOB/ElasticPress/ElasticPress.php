@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Yard\OpenWOB\ElasticPress;
 
@@ -19,7 +19,7 @@ class ElasticPress
 
     public function __construct(Config $config, OpenWOBRepository $repository)
     {
-        $this->config     = $config;
+        $this->config = $config;
         $this->repository = $repository;
     }
 
@@ -72,7 +72,7 @@ class ElasticPress
             [
                 "filter" => [
                     "match" => [
-                        "post_title" => get_query_var('s'),
+                        "post_title" => \get_query_var('s'),
                     ],
                 ],
                 "weight" => $this->config->get('elasticpress.search.weight'),
@@ -106,7 +106,7 @@ class ElasticPress
                 define('ES_SHIELD', trim($settings['_ow_setting_elasticsearch_shield']));
             }
 
-            $url     = parse_url($settings['_ow_setting_elasticsearch_url']);
+            $url = parse_url($settings['_ow_setting_elasticsearch_url']);
             $build[] = $url['scheme'] . '://';
             $build[] = defined('ES_SHIELD') ? sprintf('%s@', ES_SHIELD) : '';
             $build[] = $url['host'];

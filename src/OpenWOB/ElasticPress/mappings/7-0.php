@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * Elasticsearch mapping for ES 7.0
  */
@@ -143,56 +143,6 @@ return [
                 ],
             ],
             [
-                'template_meta_types' => [
-                    'path_match' => 'meta.*',
-                    'mapping'    => [
-                        'type'       => 'object',
-                        'path'       => 'full',
-                        'properties' => [
-                            'value'    => [
-                                'type'   => 'text',
-                                'fields' => [
-                                    'sortable' => [
-                                        'type'         => 'keyword',
-                                        'ignore_above' => 10922,
-                                        'normalizer'   => 'lowerasciinormalizer',
-                                    ],
-                                    'raw'      => [
-                                        'type'         => 'keyword',
-                                        'ignore_above' => 10922,
-                                    ],
-                                ],
-                            ],
-                            'raw'      => [ /* Left for backwards compat */
-                                'type'         => 'keyword',
-                                'ignore_above' => 10922,
-                            ],
-                            'long'     => [
-                                'type' => 'long',
-                            ],
-                            'double'   => [
-                                'type' => 'double',
-                            ],
-                            'boolean'  => [
-                                'type' => 'boolean',
-                            ],
-                            'date'     => [
-                                'type'   => 'date',
-                                'format' => 'yyyy-MM-dd',
-                            ],
-                            'datetime' => [
-                                'type'   => 'date',
-                                'format' => 'yyyy-MM-dd HH:mm:ss',
-                            ],
-                            'time'     => [
-                                'type'   => 'date',
-                                'format' => 'HH:mm:ss',
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
                 'template_terms' => [
                     'path_match' => 'terms.*',
                     'mapping'    => [
@@ -270,6 +220,9 @@ return [
                     ],
                 ],
             ],
+            'excerpt' => [
+                'type' => 'text'
+            ],
             'content' => [
                 'type' => 'object'
             ],
@@ -309,10 +262,7 @@ return [
             ],
             'permalink'             => [
                 'type' => 'keyword',
-            ],
-            'meta'                  => [
-                'type' => 'object',
-            ],
+            ]
         ],
     ],
 ];

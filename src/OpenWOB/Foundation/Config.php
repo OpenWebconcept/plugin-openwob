@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Yard\OpenWOB\Foundation;
 
@@ -37,7 +37,7 @@ class Config
     public function __construct($path, array $items = [])
     {
         $this->items = $items;
-        $this->path  = $path;
+        $this->path = $path;
         $this->scanDirectory($this->getPath());
     }
 
@@ -163,7 +163,7 @@ class Config
             if ("dir" == $fileType) {
                 $this->scanDirectory($file);
             } else {
-                $name  = str_replace('.php', '', basename($file));
+                $name = str_replace('.php', '', basename($file));
                 $value = include $file;
 
                 // If its in the first directory just add the file.
@@ -176,7 +176,7 @@ class Config
                 $path = str_replace($this->path . '/', '', $path);
 
                 // Build an array from the path.
-                $items        = [];
+                $items = [];
                 $items[$name] = $value;
                 foreach (array_reverse(explode('/', $path)) as $key) {
                     $items = [$key => $items];

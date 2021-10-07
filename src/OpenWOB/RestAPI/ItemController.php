@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Yard\OpenWOB\RestAPI;
 
@@ -121,7 +121,7 @@ class ItemController
             ->query(apply_filters('yard/openwob/rest-api/items/query', $this->getPaginatorParams($request)))
             ->query(apply_filters('yard/openwob/rest-api/items/query', $this->getFilters($request)));
 
-        $data  = $items->all();
+        $data = $items->all();
 
         return new Response([
             'WOBverzoeken' => $data

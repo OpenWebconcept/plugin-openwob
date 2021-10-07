@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Yard\OpenWOB\Tests\Foundation;
 
@@ -32,7 +32,7 @@ class DependencyCheckerTest extends TestCase
         ];
 
         $dismissableAdminNotice = m::mock(DismissableAdminNotice::class);
-        $checker                = new DependencyChecker($dependencies, [], $dismissableAdminNotice);
+        $checker = new DependencyChecker($dependencies, [], $dismissableAdminNotice);
 
         WP_Mock::userFunction('is_plugin_active')
             ->withArgs(['test-plugin/test-plugin.php'])
@@ -46,7 +46,7 @@ class DependencyCheckerTest extends TestCase
     public function it_succeeds_when_no_dependencies_are_set()
     {
         $dismissableAdminNotice = m::mock(DismissableAdminNotice::class);
-        $checker                = new DependencyChecker([], [], $dismissableAdminNotice);
+        $checker = new DependencyChecker([], [], $dismissableAdminNotice);
 
         WP_Mock::userFunction('is_plugin_active')
             ->never();
@@ -70,7 +70,7 @@ class DependencyCheckerTest extends TestCase
         ];
 
         $dismissableAdminNotice = m::mock(DismissableAdminNotice::class);
-        $checker                = new DependencyChecker($dependencies, [], $dismissableAdminNotice);
+        $checker = new DependencyChecker($dependencies, [], $dismissableAdminNotice);
 
         WP_Mock::userFunction('is_plugin_active')
             ->withArgs(['pluginstub.php'])
@@ -96,7 +96,7 @@ class DependencyCheckerTest extends TestCase
         ];
 
         $dismissableAdminNotice = m::mock(DismissableAdminNotice::class);
-        $checker                = new DependencyChecker($dependencies, [], $dismissableAdminNotice);
+        $checker = new DependencyChecker($dependencies, [], $dismissableAdminNotice);
 
         WP_Mock::userFunction('is_plugin_active')
             ->withArgs(['pluginstub.php'])

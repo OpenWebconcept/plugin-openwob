@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Yard\OpenWOB\RestAPI;
 
@@ -12,7 +12,7 @@ use Yard\OpenWOB\Foundation\ServiceProvider;
  *  ),
  *  @OA\Info(
  *    title="OpenWebConcept OpenWOB API",
- *    version="1.0",
+ *    version="1.0.1",
  *    termsOfService="https://www.openwebconcept.nl/",
  *    @OA\Contact(
  *      name="OpenWebConcept",

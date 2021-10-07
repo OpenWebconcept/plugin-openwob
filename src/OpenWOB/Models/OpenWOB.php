@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Yard\OpenWOB\Models;
 
@@ -51,6 +51,7 @@ class OpenWOB
             'Volgnummer'                  => $this->meta('Volgnummer', ''),
             'Titel'                       => $this->meta('Titel', ''),
             'Beschrijving'                => $this->field('post_content', ''),
+            'Samenvatting'                => $this->field('post_excerpt', ''),
             'Verzoeker'                   => $this->meta('Verzoeker', ''),
             'Ontvangstdatum'              => $this->meta('Ontvangstdatum'),
             'Besluitdatum'                => $this->meta('Besluitdatum'),
@@ -71,7 +72,7 @@ class OpenWOB
         }
 
         if ($geografischePositie = GeografischePositieEntity::make($this->meta('Geografische_positie', []))->get()) {
-            $data['Geografische_positie']        = $geografischePositie;
+            $data['Geografische_positie'] = $geografischePositie;
         }
 
         foreach ($this->meta('Bijlagen', []) as $bijlage) {
@@ -100,8 +101,8 @@ class OpenWOB
     public function meta(string $key, $default = null)
     {
         $separator = '.';
-        $key       = sprintf('%s_%s', 'wob', $key);
-        $data      = $this->data['meta'];
+        $key = sprintf('%s_%s', 'wob', $key);
+        $data = $this->data['meta'];
         // @assert $key is a non-empty string
         // @assert $data is a loopable array
         // @otherwise return $default value

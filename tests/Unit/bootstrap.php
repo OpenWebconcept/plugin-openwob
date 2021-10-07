@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * PHPUnit bootstrap file
@@ -24,8 +24,7 @@ define('OW_SLUG', basename(__FILE__, '.php'));
 define('OW_LANGUAGE_DOMAIN', OW_SLUG);
 define('OW_DIR', basename(__DIR__));
 define('OW_ROOT_PATH', __DIR__);
-define('OW_VERSION', '1.0.0');
-
+define('OW_VERSION', '1.0.1');
 
 /**
  * Bootstrap WordPress Mock.

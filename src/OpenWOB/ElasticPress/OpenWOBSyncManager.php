@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Yard\OpenWOB\ElasticPress;
 
@@ -86,7 +86,6 @@ class OpenWOBSyncManager extends SyncManager
      * Sync ES index with what happened to the post being saved
      *
      * @param int $post_id Post id.
-     * @since 0.1.0
      */
     public function action_sync_on_update($post_id)
     {

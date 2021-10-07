@@ -1,6 +1,6 @@
 lando php ./docs/openapi-create.php > ./docs/specs/openapi.yaml
 
-cd ./docs && npm i
+lando npm i --prefix docs
 lando npm run doc-build --prefix docs
 
 git clone git@bitbucket.org:openwebconcept/openwebconcept.bitbucket.org.git

@@ -19,12 +19,12 @@
     "php": ">=7.2"
   },
   "require-dev": {
-    "mockery/mockery": "1.0.*",
-    "phpunit/phpunit": "~8.0",
+    "mockery/mockery": "^1.0",
+    "phpunit/phpunit": "~8.0 | ~9.0",
     "10up/wp_mock": "dev-master",
-    "friendsofphp/php-cs-fixer": "^2.0",
-    "szepeviktor/phpstan-wordpress": "0.6.*",
-    "symfony/var-dumper": "^5.1",
+    "friendsofphp/php-cs-fixer": "^3.0",
+    "szepeviktor/phpstan-wordpress": "0.7.*",
+    "symfony/var-dumper": "^5.0",
     "wpackagist-plugin/elasticpress":"^3.0",
     "zircote/swagger-php": "^3.0"
   },

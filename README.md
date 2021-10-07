@@ -5,4 +5,4 @@
 OpenWOB is an interface to the REST API for querying WOB items.
 
 * [Repository](https://bitbucket.org/openwebconcept/plugin-openwob/src)
-* [Documentation](https://openwebconcept.bitbucket.io/openwob/index.html#tag/API)
+* [Documentation](https://openwebconcept.bitbucket.io/openwob/index.html)

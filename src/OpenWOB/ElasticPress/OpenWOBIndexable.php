@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Yard\OpenWOB\ElasticPress;
 
@@ -31,7 +31,7 @@ class OpenWOBIndexable extends Post
             'plural'   => esc_html__('OpenWOB items', OW_LANGUAGE_DOMAIN),
             'singular' => esc_html__('OpenWOB item', OW_LANGUAGE_DOMAIN),
         ];
-        $this->repository   = $repository;
+        $this->repository = $repository;
         $this->sync_manager = new OpenWOBSyncManager($this->slug);
     }
 
@@ -56,7 +56,7 @@ class OpenWOBIndexable extends Post
      */
     public function get_index_name($siteID = null)
     {
-        $siteUrl      = pathinfo(get_site_url());
+        $siteUrl = pathinfo(get_site_url());
         $siteBasename = $siteUrl['basename'];
 
         if (defined('EP_INDEX_PREFIX') && EP_INDEX_PREFIX) {
@@ -93,9 +93,9 @@ class OpenWOBIndexable extends Post
             return false;
         }
 
-        $post_date         = $post->post_date;
-        $post_date_gmt     = $post->post_date_gmt;
-        $post_modified     = $post->post_modified;
+        $post_date = $post->post_date;
+        $post_date_gmt = $post->post_date_gmt;
+        $post_modified = $post->post_modified;
         $post_modified_gmt = $post->post_modified_gmt;
 
         // To prevent infinite loop, we don't queue when updated_postmeta.
@@ -106,13 +106,14 @@ class OpenWOBIndexable extends Post
             'post_date'             => $post_date,
             'post_date_gmt'         => $post_date_gmt,
             'title'                 => $post->post_title,
+            'excerpt'               => $post->post_excerpt,
             'content'               => $this->prepare_meta_types($this->prepare_meta($post)), // post_meta removed in 2.4
             'post_name'             => $post->post_name,
             'post_modified'         => $post_modified,
             'post_modified_gmt'     => $post_modified_gmt,
             'post_type'             => $post->post_type,
             'post_mime_type'        => $post->post_mime_type,
-            'permalink'             => get_permalink($post_id),
+            'permalink'             => \get_permalink($post_id),
             'meta'                  => $this->prepare_meta_types($this->prepare_meta($post)), // post_meta removed in 2.4
         ];
 
@@ -140,7 +141,7 @@ class OpenWOBIndexable extends Post
                 'order'               => 'desc',
             ]));
 
-        $args  = array_merge($args, $items->getQueryArgs());
+        $args = array_merge($args, $items->getQueryArgs());
         $query = new WP_Query($args);
 
         return [

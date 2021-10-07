@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Yard\OpenWOB\Tests\Models;
 
@@ -19,10 +19,10 @@ class OpenWOBTest extends TestCase
     {
         WP_Mock::setUp();
 
-        $this->config     = m::mock(Config::class);
+        $this->config = m::mock(Config::class);
         $this->repository = m::mock(OpenWOBRepository::class);
 
-        $this->plugin         = m::mock(Plugin::class);
+        $this->plugin = m::mock(Plugin::class);
         $this->plugin->config = $this->config;
         $this->plugin->loader = m::mock(Loader::class);
 

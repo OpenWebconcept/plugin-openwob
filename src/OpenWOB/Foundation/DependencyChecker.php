@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Yard\OpenWOB\Foundation;
 
@@ -34,8 +34,8 @@ class DependencyChecker
      */
     public function __construct(array $dependencies, array $suggestions = [], DismissableAdminNotice $dismissableAdminNotice)
     {
-        $this->dependencies           = $dependencies;
-        $this->suggestions            = $suggestions;
+        $this->dependencies = $dependencies;
+        $this->suggestions = $suggestions;
         $this->dismissableAdminNotice = $dismissableAdminNotice;
     }
 

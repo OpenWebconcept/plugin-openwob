@@ -1,9 +1,9 @@
 {
   "name": "openwob-docs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OpenWOB docs",
   "dependencies": {
-    "redoc-cli": "^0.10.4"
+    "redoc-cli": "^0.12.3"
   },
   "scripts": {
     "doc-build": "redoc-cli bundle ./specs/openapi.yaml --output ./index.html -t templates/template.hbs"

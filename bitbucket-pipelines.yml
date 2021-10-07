@@ -9,7 +9,7 @@ pipelines:
             - composer
             - vendor-directory
           script:
-            - composer install --no-interaction --no-progress --prefer-dist --ignore-platform-reqs
+            - composer install --no-interaction --no-progress --prefer-dist
             - ./vendor/bin/phpunit --testsuite "Unit Test Suite"
   branches:
     "{master,develop}":

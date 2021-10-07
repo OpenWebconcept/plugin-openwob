@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Yard\OpenWOB\Foundation;
 
@@ -21,7 +21,7 @@ class DismissableAdminNotice
             return;
         }
 
-        $js_url        = \plugins_url('/resources/js/dismissable-admin-notice.js', OW_FILE);
+        $js_url = \plugins_url('/resources/js/dismissable-admin-notice.js', OW_FILE);
         \wp_enqueue_script('dismissible-notices', $js_url, ['jquery', 'common' ], false, true);
         \wp_localize_script(
             'dismissible-notices',
@@ -38,7 +38,7 @@ class DismissableAdminNotice
      */
     public static function dismissAdminNotice(): void
     {
-        $optionName        = \sanitize_text_field($_POST['option_name']);
+        $optionName = \sanitize_text_field($_POST['option_name']);
         $dismissibleLength = \sanitize_text_field($_POST['dismissible_length']);
 
         if ('forever' != $dismissibleLength) {
@@ -69,10 +69,10 @@ class DismissableAdminNotice
      */
     public function isAdminNoticeActive(string $arg): bool
     {
-        $array       = explode('-', $arg);
-        $length      = array_pop($array);
-        $optionName  = implode('-', $array);
-        $dbRecord    = $this->getAdminNoticeCache($optionName);
+        $array = explode('-', $arg);
+        $length = array_pop($array);
+        $optionName = implode('-', $array);
+        $dbRecord = $this->getAdminNoticeCache($optionName);
 
         if ('-1' == $dbRecord) {
             return false;
@@ -95,8 +95,8 @@ class DismissableAdminNotice
             return false;
         }
         $cache_key = self::STATE_OPTION .'-' . md5($id);
-        $timeout   = \get_site_option($cache_key);
-        $timeout   = '-1' === $timeout ? time() + 60 : $timeout;
+        $timeout = \get_site_option($cache_key);
+        $timeout = '-1' === $timeout ? time() + 60 : $timeout;
 
         if (empty($timeout) || time() > $timeout) {
             return false;

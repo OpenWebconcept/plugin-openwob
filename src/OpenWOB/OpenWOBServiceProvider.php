@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Yard\OpenWOB;
 
@@ -54,7 +54,7 @@ class OpenWOBServiceProvider extends ServiceProvider
         }
 
         $information = get_post_meta($post->ID, 'wob_Wobverzoek_informatie', true);
-        $timestamp   = $information['wob_Tijdstip_laatste_wijziging']['timestamp'] ?? null;
+        $timestamp = $information['wob_Tijdstip_laatste_wijziging']['timestamp'] ?? null;
 
         update_post_meta($post->ID, 'updated_at', $timestamp);
     }
@@ -114,7 +114,7 @@ class OpenWOBServiceProvider extends ServiceProvider
             'has_archive'        => false,
             'hierarchical'       => false,
             'menu_position'      => null,
-            'supports'           => [ 'author']
+            'supports'           => [ 'author', 'excerpt']
         ]);
     }
 }

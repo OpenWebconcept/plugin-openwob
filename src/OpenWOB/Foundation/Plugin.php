@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
  * BasePlugin which sets all the serviceproviders.
@@ -75,7 +75,7 @@ class Plugin
      */
     public function boot(): bool
     {
-        $dependencyChecker =  new DependencyChecker(
+        $dependencyChecker = new DependencyChecker(
             $this->config->get('dependencies.required'),
             $this->config->get('dependencies.suggested'),
             new DismissableAdminNotice
@@ -131,7 +131,7 @@ class Plugin
      */
     public function callServiceProviders(string $method, string $key = ''): void
     {
-        $offset   = $key ? "core.providers.{$key}" : 'core.providers';
+        $offset = $key ? "core.providers.{$key}" : 'core.providers';
         $services = $this->config->get($offset);
 
         foreach ($services as $service) {

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Yard\OpenWOB\Tests\ElasticPress;
 
@@ -34,10 +34,10 @@ class ElasticPressTest extends TestCase
     {
         WP_Mock::setUp();
 
-        $this->config     = m::mock(Config::class);
+        $this->config = m::mock(Config::class);
         $this->repository = m::mock(OpenWOBRepository::class);
 
-        $this->plugin         = m::mock(Plugin::class);
+        $this->plugin = m::mock(Plugin::class);
         $this->plugin->config = $this->config;
         $this->plugin->loader = m::mock(Loader::class);
 
@@ -74,7 +74,7 @@ class ElasticPressTest extends TestCase
         ]);
 
         $expected = [];
-        $actual   = $this->service->getSettings();
+        $actual = $this->service->getSettings();
 
         $this->assertEquals($expected, $actual);
     }
