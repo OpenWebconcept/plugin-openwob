@@ -91,7 +91,7 @@ class DependencyChecker
     {
         add_action('admin_notices', function () {
             $list = '<p>' . __(
-                'The following plugins are required to use the OpenPub:',
+                'The following plugins are required to use the OpenWOB:',
                 OW_LANGUAGE_DOMAIN
             ) . '</p><ol>';
 
@@ -119,7 +119,7 @@ class DependencyChecker
                 return;
             }
             $list = '<p>' . __(
-                'The following plugins or libraries are suggested and supported to be used with the OpenPub:',
+                'The following plugins or libraries are suggested and supported to be used with the OpenWOB:',
                 OW_LANGUAGE_DOMAIN
             ) . '</p><ol>';
 
