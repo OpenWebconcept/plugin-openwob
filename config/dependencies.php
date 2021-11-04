@@ -18,7 +18,7 @@ return [
         [
             'type'    => 'plugin',
             'label'   => 'RWMB Metabox',
-            'version' => '4.14.0',
+            'version' => '5.0',
             'file'    => 'meta-box/meta-box.php',
         ],
         [
@@ -37,7 +37,7 @@ return [
         [
             'type'    => 'plugin',
             'label'   => 'ElasticPress',
-            'version' => '3.0.0',
+            'version' => '3.6.0',
             'file'    => 'elasticpress/elasticpress.php',
         ]
     ]

@@ -13,7 +13,7 @@ class OpenWOBIndexable extends Post
     /**
      * Indexable slug used for identification
      */
-    public $slug = 'openwob';
+    public $slug = 'openwob-item';
 
     /** @var Config */
     protected $config;
@@ -149,4 +149,30 @@ class OpenWOBIndexable extends Post
             'total_objects' => $query->found_posts,
         ];
     }
+
+    /**
+	 * Returns indexable post types for the current site
+	 *
+	 * @since 0.9
+	 * @return mixed|void
+	 */
+	public function get_indexable_post_types() {
+		$post_types = ['openwob-item'];
+
+		/**
+		 * Remove attachments by default
+		 *
+		 * @since  3.0
+		 */
+		unset( $post_types['attachment'] );
+
+		/**
+		 * Filter indexable post types
+		 *
+		 * @hook ep_indexable_post_types
+		 * @param  {array} $post_types Indexable post types
+		 * @return  {array} New post types
+		 */
+		return apply_filters( 'ep_indexable_post_types', $post_types );
+	}
 }

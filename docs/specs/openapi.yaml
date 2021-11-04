@@ -9,7 +9,7 @@ info:
   license:
     name: OpenWebConcept
     url: 'https://www.openwebconcept.nl/'
-  version: 1.0.1
+  version: 1.0.2
   x-logo:
     url: 'https://openwebconcept.nl/wp-content/themes/openwebconcept/assets/src/images/logo-dark.png'
   description:
