@@ -9,7 +9,7 @@ info:
   license:
     name: OpenWebConcept
     url: 'https://www.openwebconcept.nl/'
-  version: 1.0.2
+  version: 1.0.3
   x-logo:
     url: 'https://openwebconcept.nl/wp-content/themes/openwebconcept/assets/src/images/logo-dark.png'
   description:
@@ -58,21 +58,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Response'
-  '/items/{ID}':
+  '/items/{UUID}':
     get:
       tags:
         - API
-      description: 'Get openWOB item by ID'
-      operationId: getItemByID
+      description: 'Get openWOB item by UUID'
+      operationId: getItem
       parameters:
         -
-          name: ID
+          name: UUID
           in: path
-          description: 'ID of OpenWOB item'
+          description: 'UUID of OpenWOB item'
           required: true
           schema:
-            type: integer
-            format: int64
+            type: string
+            format: uuid
           example: /1
       responses:
         '200':

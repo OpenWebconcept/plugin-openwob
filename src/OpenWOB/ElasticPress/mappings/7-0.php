@@ -191,8 +191,11 @@ return [
             ],
         ],
         'properties'        => [
-            'ID'                    => [
+            'UUID' => [
                 'type' => 'long',
+            ],
+            'ID'                    => [
+                'type' => 'keyword',
             ],
             'post_date'             => [
                 'type'   => 'date',

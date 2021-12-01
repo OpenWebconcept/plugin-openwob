@@ -26,11 +26,6 @@ class ItemController
 
     /**
      * Merges a paginator, based on a WP_Query, inside a data arary.
-     *
-     * @param array    $data
-     * @param WP_Query $query
-     *
-     * @return array
      */
     protected function addPaginator(array $data, WP_Query $query): array
     {
@@ -53,11 +48,6 @@ class ItemController
 
     /**
      * Get the paginator query params for a given query.
-     *
-     * @param WP_REST_Request $request
-     * @param int             $limit
-     *
-     * @return array
      */
     protected function getPaginatorParams(WP_REST_Request $request, int $limit = 10): array
     {
@@ -149,18 +139,18 @@ class ItemController
      * @throws \ReflectionException
      *
      *  @OA\Get(
-     *    path="/items/{ID}",
-     *    operationId="getItemByID",
-     *    description="Get openWOB item by ID",
+     *    path="/items/{UUID}",
+     *    operationId="getItem",
+     *    description="Get openWOB item by UUID",
      *    @OA\Parameter(
-     *      name="ID",
+     *      name="UUID",
      *      in="path",
-     *      description="ID of OpenWOB item",
-     *       example="/1",
+     *      description="UUID of OpenWOB item",
+     *       example="/36aea3a9-e1d8-407a-8ea3-4617856f97fc",
      *      required=true,
      *      @OA\Schema(
-     *        type="integer",
-     *        format="int64"
+     *        type="string",
+     *        format="uuid"
      *      )
      *    ),
      *    @OA\Response(
@@ -187,14 +177,14 @@ class ItemController
     */
     public function getItem(WP_REST_Request $request)
     {
-        $id = (int) $request->get_param('id');
+        $id = (string) $request->get_param('id');
 
         $item = (new OpenWOBRepository)
             ->query(apply_filters('yard/openwob/rest-api/items/query/single', []));
         $data = $item->find($id);
 
         if (!$data) {
-            return new WP_Error('no_item_found', sprintf('Item with ID "%d" not found (anymore)', $id), [
+            return new WP_Error('no_item_found', sprintf('Item with UUID "%d" not found (anymore)', $id), [
                 'status' => 404,
             ]);
         }

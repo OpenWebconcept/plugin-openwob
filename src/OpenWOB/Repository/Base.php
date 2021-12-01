@@ -96,13 +96,13 @@ abstract class Base
      *
      * @return array|null
      */
-    public function find(int $id)
+    public function find($id)
     {
         $args = array_merge($this->queryArgs, [
             'post_type'  => [$this->posttype],
             'meta_query' => [
                     [
-                        'key'     => 'wob_ID',
+                        'key'     => 'wob_UUID',
                         'value'   => $id,
                         'compare' => 'IN',
                     ],

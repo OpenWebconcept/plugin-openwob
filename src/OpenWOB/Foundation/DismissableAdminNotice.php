@@ -55,7 +55,6 @@ class DismissableAdminNotice
         }
 
         \check_ajax_referer('dismissible-notice', 'nonce');
-        var_dump($dismissibleLength);
         self::setAdminNoticeCache($optionName, $dismissibleLength);
         \wp_die();
     }

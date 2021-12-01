@@ -3,15 +3,14 @@
 namespace Yard\OpenWOB\ElasticPress;
 
 use ElasticPress\Indexable\Post\SyncManager;
-use ElasticPress\Indexables as Indexables;
 
 class OpenWOBSyncManager extends SyncManager
 {
     /**
-	 * Indexable slug
-	 *
-	 * @since  3.0
-	 * @var    string
-	 */
-	public $indexable_slug = 'openwob-item';
+     * Indexable slug
+     *
+     * @since  3.0
+     * @var    string
+     */
+    public $indexable_slug = 'openwob-item';
 }

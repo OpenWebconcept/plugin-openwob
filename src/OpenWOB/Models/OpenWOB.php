@@ -45,7 +45,8 @@ class OpenWOB
     {
         $data = [
             'Wobverzoek_informatie'       => InfoEntity::make($this->meta('Wobverzoek_informatie', []))->get(),
-            'ID'                          => (int) $this->meta('ID'),
+            'UUID'                        => $this->meta('UUID'),
+            'ID'                          => $this->meta('ID'),
             'Behandelend_bestuursorgaan'  => $this->meta('Behandelend_bestuursorgaan'),
             'Ontvanger_informatieverzoek' => $this->meta('Ontvanger_informatieverzoek', ''),
             'Volgnummer'                  => $this->meta('Volgnummer', ''),

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Version 1.0.3
+
+- Add UUID for identifier
+- RestAPI: findBy UUID instead of custom ID
+
 ## Version 1.0.2
 
 - Cleanup duplicate code in OpenWOBSyncManager

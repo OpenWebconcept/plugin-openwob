@@ -20,7 +20,7 @@ class OpenWOBServiceProvider extends ServiceProvider
     public function register()
     {
         $this->plugin->loader->addAction('wp_insert_post_data', $this, 'fillTitle', 10, 1);
-        $this->plugin->loader->addAction('wp_after_insert_post', $this, 'updateSavedPost', 10, 4);
+        $this->plugin->loader->addAction('wp_after_insert_post', $this, 'updateSavedPost', 10, 3);
         $this->plugin->loader->addAction('init', $this, 'registerPostTypes');
         $this->plugin->loader->addAction('pre_get_posts', $this, 'orderByPublishedDate');
         $this->plugin->loader->addFilter('rwmb_meta_boxes', $this, 'registerMetaboxes', 10, 1);
@@ -42,21 +42,28 @@ class OpenWOBServiceProvider extends ServiceProvider
 
     /**
      * Fill the post_title for the overview.
-     *
-     * @param array $post
-     *
-     * @return array
      */
-    public function updateSavedPost(int $postID, \WP_Post $post, bool $update, $post_before)
+    public function updateSavedPost($post, $update, $post_before): void
     {
-        if (self::POSTTYPE !== $post->post_type) {
+        if (self::POSTTYPE !== \get_post_type($post)) {
             return;
         }
 
-        $information = get_post_meta($post->ID, 'wob_Wobverzoek_informatie', true);
+        $information = \get_post_meta($post, 'wob_Wobverzoek_informatie', true);
         $timestamp = $information['wob_Tijdstip_laatste_wijziging']['timestamp'] ?? null;
 
-        update_post_meta($post->ID, 'updated_at', $timestamp);
+        \update_post_meta($post, 'updated_at', $timestamp);
+        \update_post_meta($post, 'wob_UUID', sprintf(
+            '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+            mt_rand(0, 0xffff),
+            mt_rand(0, 0xffff),
+            mt_rand(0, 0xffff),
+            mt_rand(0, 0x0fff)|0x4000,
+            mt_rand(0, 0x3fff)|0x8000,
+            mt_rand(0, 0xffff),
+            mt_rand(0, 0xffff),
+            mt_rand(0, 0xffff)
+        ));
     }
 
     /**

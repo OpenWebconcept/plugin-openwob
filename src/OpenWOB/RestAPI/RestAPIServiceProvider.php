@@ -2,7 +2,6 @@
 
 namespace Yard\OpenWOB\RestAPI;
 
-use WP_REST_Server;
 use Yard\OpenWOB\Foundation\ServiceProvider;
 
 /**
@@ -12,7 +11,7 @@ use Yard\OpenWOB\Foundation\ServiceProvider;
  *  ),
  *  @OA\Info(
  *    title="OpenWebConcept OpenWOB API",
- *    version="1.0.2",
+ *    version="1.0.3",
  *    termsOfService="https://www.openwebconcept.nl/",
  *    @OA\Contact(
  *      name="OpenWebConcept",
@@ -65,13 +64,13 @@ class RestAPIServiceProvider extends ServiceProvider
     public function registerRoutes()
     {
         \register_rest_route($this->namespace, 'items', [
-            'methods'  => WP_REST_Server::READABLE,
+            'methods'  => \WP_REST_Server::READABLE,
             'callback' => [new ItemController($this->plugin), 'getItems'],
             'permission_callback' => '__return_true'
         ]);
 
-        register_rest_route($this->namespace, 'items/(?P<id>\d+)', [
-            'methods'  => WP_REST_Server::READABLE,
+        \register_rest_route($this->namespace, 'items/(?P<id>[a-z0-9]{8}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{12})', [
+            'methods'  => \WP_REST_Server::READABLE,
             'callback' => [new ItemController($this->plugin), 'getItem'],
             'permission_callback' => '__return_true'
         ]);
