@@ -1,6 +1,6 @@
 {
   "name": "openwob-docs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "OpenWOB docs",
   "dependencies": {
     "redoc-cli": "^0.12.3"

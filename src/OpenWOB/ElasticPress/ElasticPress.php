@@ -32,6 +32,7 @@ class ElasticPress
         \add_filter('epwr_decay', [$this, 'setDecay'], 10, 3);
         \add_filter('epwr_offset', [$this, 'setOffset'], 10, 3);
         \add_filter('ep_analyzer_language', [$this, 'setLanguage'], 10, 2);
+        \add_filter('ep_indexable_post_types', [$this, 'removeOpenWOB'], 10, 1);
     }
 
     /**
@@ -92,6 +93,12 @@ class ElasticPress
     public function setLanguage(string $language, $analyzer): string
     {
         return $this->config->get('elasticpress.language');
+    }
+
+    public function removeOpenWOB($postTypes): array
+    {
+        unset($postTypes['openwob-item']);
+        return $postTypes;
     }
 
     /**

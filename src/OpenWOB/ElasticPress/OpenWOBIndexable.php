@@ -158,15 +158,9 @@ class OpenWOBIndexable extends Post
      */
     public function get_indexable_post_types()
     {
-        $post_types = ['openwob-item'];
-
-        /**
-         * Filter indexable post types
-         *
-         * @hook ep_indexable_post_types
-         * @param  {array} $post_types Indexable post types
-         * @return  {array} New post types
-         */
-        return apply_filters('ep_indexable_post_types', $post_types);
+        $post_types = parent::get_indexable_post_types();
+        unset($post_types['openwob-item']);
+        $post_types = apply_filters('ep_indexable_post_types', $post_types);
+        return ['openwob-item'];
     }
 }
