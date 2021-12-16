@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yard\OpenWOB\ElasticPress;
 
@@ -38,7 +40,7 @@ class ElasticPress
     /**
      * Set decay of post.
      */
-    public function setDecay(int $decay, array $formatted_args, array $args): int
+    public function setDecay(int $decay, array $formatted_args, array $args): string
     {
         return $this->config->get('elasticpress.expire.decay');
     }

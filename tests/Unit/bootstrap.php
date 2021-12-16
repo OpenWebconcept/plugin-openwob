@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /**
  * PHPUnit bootstrap file
@@ -12,7 +14,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 /**
  * Load all stubs.
  */
-$files = glob(__DIR__ .'/../Stubs/WordPress/*.php');
+$files = glob(__DIR__ . '/../Stubs/WordPress/*.php');
 array_map(function ($file) {
     require_once $file;
 }, $files);
@@ -24,7 +26,7 @@ define('OW_SLUG', basename(__FILE__, '.php'));
 define('OW_LANGUAGE_DOMAIN', OW_SLUG);
 define('OW_DIR', basename(__DIR__));
 define('OW_ROOT_PATH', __DIR__);
-define('OW_VERSION', '1.0.4');
+define('OW_VERSION', '1.0.5');
 
 /**
  * Bootstrap WordPress Mock.
@@ -33,10 +35,10 @@ define('OW_VERSION', '1.0.4');
 \WP_Mock::bootstrap();
 
 $GLOBALS[OW_LANGUAGE_DOMAIN] = [
-    'active_plugins' => [OW_DIR .'/'. OW_FILE],
+    'active_plugins' => [OW_DIR . '/' . OW_FILE],
 ];
 
-if (! function_exists('get_echo')) {
+if (!function_exists('get_echo')) {
 
     /**
      * Capture the echo of a callable function.
