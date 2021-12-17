@@ -40,9 +40,11 @@ class ElasticPress
     /**
      * Set decay of post.
      */
-    public function setDecay(int $decay, array $formatted_args, array $args): string
+    public function setDecay(string $decay, array $formatted_args, array $args): float
     {
-        return $this->config->get('elasticpress.expire.decay');
+        $decay = $this->config->get('elasticpress.expire.decay');
+
+        return (float) $decay;
     }
 
     /**
