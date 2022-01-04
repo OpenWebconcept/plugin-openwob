@@ -77,7 +77,7 @@ class OpenWOBServiceProvider extends ServiceProvider
     {
         $metaboxes = $this->plugin->config->get('metaboxes') ?? [];
 
-        return array_merge($rwmbMetaboxes, \apply_filters("yard/openwob/before-register-metaboxes", $metaboxes));
+        return array_merge($rwmbMetaboxes, \apply_filters('yard/openwob/before-register-metaboxes', $metaboxes));
     }
 
     /**

@@ -52,7 +52,7 @@ return [
                 'type' => 'text',
             ],
             [
-                'name' => __('wob_Titel', OW_LANGUAGE_DOMAIN),
+                'name' => __('Titel', OW_LANGUAGE_DOMAIN),
                 'id'   => 'wob_Titel',
                 'type' => 'text',
             ],
@@ -96,7 +96,7 @@ return [
                 'type'             => 'text',
             ],
             [
-                'name'             => __('Behandelend_bestuursorgaan', OW_LANGUAGE_DOMAIN),
+                'name'             => __('Behandelend bestuursorgaan', OW_LANGUAGE_DOMAIN),
                 'id'               => 'wob_Behandelend_bestuursorgaan',
                 'type'             => 'text',
             ],
@@ -112,7 +112,7 @@ return [
                 ]
             ],
             [
-                'name'             => __('Ontvanger_informatieverzoek', OW_LANGUAGE_DOMAIN),
+                'name'             => __('Ontvanger informatieverzoek', OW_LANGUAGE_DOMAIN),
                 'id'               => 'wob_Ontvanger_informatieverzoek',
                 'type'             => 'text',
             ],
@@ -178,17 +178,17 @@ return [
                 ],
             ],
             [
-                'name'             => __('URL_informatieverzoek', OW_LANGUAGE_DOMAIN),
+                'name'             => __('URL informatieverzoek', OW_LANGUAGE_DOMAIN),
                 'id'               => 'wob_URL_informatieverzoek',
                 'type'             => 'url',
             ],
             [
-                'name'             => __('URL_inventarisatielijst', OW_LANGUAGE_DOMAIN),
+                'name'             => __('URL inventarisatielijst', OW_LANGUAGE_DOMAIN),
                 'id'               => 'wob_URL_inventarisatielijst',
                 'type'             => 'url',
             ],
             [
-                'name'             => __('URL_besluit', OW_LANGUAGE_DOMAIN),
+                'name'             => __('URL besluit', OW_LANGUAGE_DOMAIN),
                 'id'               => 'wob_URL_besluit',
                 'type'             => 'url',
             ],
@@ -198,12 +198,12 @@ return [
                 'type'             => 'text',
             ],
             [
-                'name'             => __('BAG_ID', OW_LANGUAGE_DOMAIN),
+                'name'             => __('BAG ID', OW_LANGUAGE_DOMAIN),
                 'id'               => 'wob_BAG_ID',
                 'type'             => 'text',
             ],
             [
-                'name'             => __('BGT_ID', OW_LANGUAGE_DOMAIN),
+                'name'             => __('BGT ID', OW_LANGUAGE_DOMAIN),
                 'id'               => 'wob_BGT_ID',
                 'type'             => 'text',
             ],
@@ -233,7 +233,7 @@ return [
                         ],
                     ],
                     [
-                        'name'             => __('Aanvullend_thema', OW_LANGUAGE_DOMAIN),
+                        'name'             => __('Aanvullend thema', OW_LANGUAGE_DOMAIN),
                         'id'               => 'wob_Aanvullend_thema',
                         'type'             => 'select',
                         'options'          => [
@@ -244,12 +244,12 @@ return [
                 ]
             ],
             [
-                'name'             => __('Geografisch_gebied', OW_LANGUAGE_DOMAIN),
+                'name'             => __('Geografisch gebied', OW_LANGUAGE_DOMAIN),
                 'id'               => 'wob_Geografisch_gebied',
                 'type'             => 'text',
             ],
             [
-                'name'             => __('Geografische_positie', OW_LANGUAGE_DOMAIN),
+                'name'             => __('Geografische positie', OW_LANGUAGE_DOMAIN),
                 'id'               => 'wob_Geografische_positie',
                 'type'             => 'group',
                 'fields'           => [
@@ -289,7 +289,7 @@ return [
                 'clone'            => true,
                 'fields'           => [
                     [
-                        'name'             => __('Type_Bijlage', OW_LANGUAGE_DOMAIN),
+                        'name'             => __('Type Bijlage', OW_LANGUAGE_DOMAIN),
                         'id'               => 'wob_Type_Bijlage',
                         'type'             => 'select',
                         'options'          => [
@@ -299,7 +299,7 @@ return [
                         ]
                     ],
                     [
-                        'name'             => __('Status_Bijlage', OW_LANGUAGE_DOMAIN),
+                        'name'             => __('Status Bijlage', OW_LANGUAGE_DOMAIN),
                         'id'               => 'wob_Status_Bijlage',
                         'type'             => 'select',
                         'options'          => [
@@ -310,7 +310,7 @@ return [
                         ]
                     ],
                     [
-                        'name'             => __('Tijdstip_laatste_wijziging_bijlage', OW_LANGUAGE_DOMAIN),
+                        'name'             => __('Tijdstip laatste wijziging bijlage', OW_LANGUAGE_DOMAIN),
                         'id'               => 'wob_Tijdstip_laatste_wijziging_bijlage',
                         'type'             => 'datetime',
                         'timestamp'        => true,
@@ -325,12 +325,12 @@ return [
                         'inline'     => false
                     ],
                     [
-                        'name'             => __('Titel_Bijlage', OW_LANGUAGE_DOMAIN),
+                        'name'             => __('Titel Bijlage', OW_LANGUAGE_DOMAIN),
                         'id'               => 'wob_Titel_Bijlage',
                         'type'             => 'text',
                     ],
                     [
-                        'name'             => __('URL_Bijlage', OW_LANGUAGE_DOMAIN),
+                        'name'             => __('URL Bijlage', OW_LANGUAGE_DOMAIN),
                         'id'               => 'wob_URL_Bijlage',
                         'type'             => 'text',
                     ],

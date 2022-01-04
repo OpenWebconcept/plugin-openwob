@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.0.5
+
+- Chore: format labels in admin.
+
 ## Version 1.0.4
 
 - Fix: remove OpenWOB items from the global post_type indexing for Elasticpress.
