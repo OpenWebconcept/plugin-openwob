@@ -28,15 +28,17 @@ class FactoryFilter
         if (false !== \strpos($filter, ':')) {
             return explode(':', $filter);
         }
+
         return [$filter, ''];
     }
 
     public function get()
     {
         $class = '\\Yard\\OpenWOB\\RestAPI\\Filters\\' . ucfirst($this->filter) .'Filter';
-        if (!class_exists($class)) {
+        if (! class_exists($class)) {
             return new NullFilter($this->value);
         }
+
         return new $class($this->value);
     }
 }

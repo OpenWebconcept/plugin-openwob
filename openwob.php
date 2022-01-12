@@ -4,7 +4,7 @@
  * Plugin Name:       Yard | OpenWOB
  * Plugin URI:        https://www.yard.nl/
  * Description:       Adds OpenWOB implementation
- * Version:           1.0.5
+ * Version:           1.0.6
  * Author:            Yard | Digital Agency
  * Author URI:        https://www.yard.nl/
  * License:           GPL-3.0
@@ -19,7 +19,7 @@ use Yard\OpenWOB\Foundation\Plugin;
 /**
  * If this file is called directly, abort.
  */
-if (!defined('WPINC')) {
+if (! defined('WPINC')) {
     die;
 }
 
@@ -28,7 +28,7 @@ define('OW_SLUG', basename(__FILE__, '.php'));
 define('OW_LANGUAGE_DOMAIN', OW_SLUG);
 define('OW_DIR', basename(__DIR__));
 define('OW_ROOT_PATH', __DIR__);
-define('OW_VERSION', '1.0.5');
+define('OW_VERSION', '1.0.6');
 
 /**
  * Manual loaded file: the autoloader.

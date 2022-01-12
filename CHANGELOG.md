@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.0.6
+
+- Chore: add per_page as alias for limit
+
 ## Version 1.0.5
 
 - Chore: format labels in admin.

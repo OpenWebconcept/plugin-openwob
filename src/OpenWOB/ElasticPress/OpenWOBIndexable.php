@@ -39,6 +39,7 @@ class OpenWOBIndexable extends Post
      * Send mapping to Elasticsearch
      *
      * @since  3.0
+     *
      * @return array
      */
     public function put_mapping()
@@ -52,6 +53,7 @@ class OpenWOBIndexable extends Post
      * Get the name of the index. Each indexable needs a unique index name
      *
      * @param  int $siteID `null` means current blog.
+     *
      * @return string
      */
     public function get_index_name($siteID = null)
@@ -83,6 +85,7 @@ class OpenWOBIndexable extends Post
      * Prepare a post for syncing
      *
      * @param int $post_id Post ID.
+     *
      * @return bool|array
      */
     public function prepare_document($post_id)
@@ -127,6 +130,7 @@ class OpenWOBIndexable extends Post
      * Query database for posts
      *
      * @param  array $args Query DB args
+     *
      * @return array
      */
     public function query_db($args)
@@ -154,6 +158,7 @@ class OpenWOBIndexable extends Post
      * Returns indexable post types for the current site
      *
      * @since 0.9
+     *
      * @return mixed|void
      */
     public function get_indexable_post_types()
@@ -161,6 +166,7 @@ class OpenWOBIndexable extends Post
         $post_types = parent::get_indexable_post_types();
         unset($post_types['openwob-item']);
         $post_types = apply_filters('ep_indexable_post_types', $post_types);
+
         return ['openwob-item'];
     }
 }

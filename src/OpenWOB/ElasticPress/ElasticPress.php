@@ -98,6 +98,7 @@ class ElasticPress
     public function removeOpenWOB($postTypes): array
     {
         unset($postTypes['openwob-item']);
+
         return $postTypes;
     }
 
@@ -108,8 +109,8 @@ class ElasticPress
     {
         $settings = $this->getSettings();
 
-        if (isset($settings['_ow_setting_elasticsearch_url']) && (!defined('EP_HOST'))) {
-            if (isset($settings['_ow_setting_elasticsearch_shield']) && (!defined('ES_SHIELD'))) {
+        if (isset($settings['_ow_setting_elasticsearch_url']) && (! defined('EP_HOST'))) {
+            if (isset($settings['_ow_setting_elasticsearch_shield']) && (! defined('ES_SHIELD'))) {
                 define('ES_SHIELD', trim($settings['_ow_setting_elasticsearch_shield']));
             }
 
@@ -117,15 +118,15 @@ class ElasticPress
             $build[] = $url['scheme'] . '://';
             $build[] = defined('ES_SHIELD') ? sprintf('%s@', ES_SHIELD) : '';
             $build[] = $url['host'];
-            $build[] = !empty($url['port']) ? sprintf(':%s', $url['port']) : '';
-            $build[] = !empty($url['path']) ? sprintf('/%s', ltrim($url['path'], '/')) : '/';
+            $build[] = ! empty($url['port']) ? sprintf(':%s', $url['port']) : '';
+            $build[] = ! empty($url['path']) ? sprintf('/%s', ltrim($url['path'], '/')) : '/';
 
             define('EP_HOST', implode('', (array_filter($build))));
 
             \update_option('ep_host', EP_HOST);
         }
 
-        if (isset($settings['_ow_setting_elasticsearch_prefix']) && (!defined('EP_INDEX_PREFIX'))) {
+        if (isset($settings['_ow_setting_elasticsearch_prefix']) && (! defined('EP_INDEX_PREFIX'))) {
             define('EP_INDEX_PREFIX', $settings['_ow_setting_elasticsearch_prefix']);
         }
     }

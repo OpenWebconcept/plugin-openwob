@@ -11,7 +11,7 @@ use Yard\OpenWOB\Foundation\ServiceProvider;
  *  ),
  *  @OA\Info(
  *    title="OpenWebConcept OpenWOB API",
- *    version="1.0.5",
+ *    version="1.0.6",
  *    termsOfService="https://www.openwebconcept.nl/",
  *    @OA\Contact(
  *      name="OpenWebConcept",
@@ -80,6 +80,7 @@ class RestAPIServiceProvider extends ServiceProvider
      * Whitelist endpoints within Config Expander.
      *
      * @param array $whitelist
+     *
      * @return array
      */
     public function whitelist(array $whitelist): array

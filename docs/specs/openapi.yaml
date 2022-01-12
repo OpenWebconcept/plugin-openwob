@@ -9,7 +9,7 @@ info:
   license:
     name: OpenWebConcept
     url: 'https://www.openwebconcept.nl/'
-  version: 1.0.5
+  version: 1.0.6
   x-logo:
     url: 'https://openwebconcept.nl/wp-content/themes/openwebconcept/assets/src/images/logo-dark.png'
   description:
@@ -73,7 +73,7 @@ paths:
           schema:
             type: string
             format: uuid
-          example: /1
+          example: /36aea3a9-e1d8-407a-8ea3-4617856f97fc
       responses:
         '200':
           description: OK
@@ -81,6 +81,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OpenWOB'
+              examples:
+                '200':
+                  summary: ''
+                  value: { name: 1 }
         '404':
           description: 'OpenWOB not found'
           content:

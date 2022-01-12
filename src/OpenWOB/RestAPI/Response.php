@@ -20,7 +20,7 @@ class Response extends WP_REST_Response
      */
     public function __construct(array $data, WP_Query $query)
     {
-        if (!$query->is_single) {
+        if (! $query->is_single) {
             $data = \array_merge_recursive(
                 $data,
                 $this->addPaginator($query),
@@ -47,10 +47,10 @@ class Response extends WP_REST_Response
         return [
             'pagination' => [
                 'total'                   => (int) $query->found_posts,
-                'limit'                   => $query->get('posts_per_page'),
+                'limit'                   => (int) $query->get('posts_per_page'),
                 'pages'                   => [
-                    'total'              => $query->max_num_pages,
-                    'current'            => $page,
+                    'total'              => (int) $query->max_num_pages,
+                    'current'            => (int) $page,
                 ]
             ]
         ];

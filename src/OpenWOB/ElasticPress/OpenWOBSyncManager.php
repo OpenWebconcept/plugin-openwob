@@ -10,6 +10,7 @@ class OpenWOBSyncManager extends SyncManager
      * Indexable slug
      *
      * @since  3.0
+     *
      * @var    string
      */
     public $indexable_slug = 'openwob-item';

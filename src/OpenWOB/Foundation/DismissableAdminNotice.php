@@ -75,9 +75,11 @@ class DismissableAdminNotice
 
         if ('-1' == $dbRecord) {
             return false;
-        } elseif (\absint($dbRecord) >= time()) {
+        }
+        if (\absint($dbRecord) >= time()) {
             return false;
         }
+
         return true;
     }
 

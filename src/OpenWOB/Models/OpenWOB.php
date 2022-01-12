@@ -13,8 +13,8 @@ use WP_Post;
 class OpenWOB
 {
     /**
-      * @var array
-      */
+     * @var array
+     */
     protected $data = [];
 
     public function __construct(array $data = [])
@@ -25,13 +25,14 @@ class OpenWOB
     protected function cleanupData(array $data): array
     {
         $data['meta'] = array_filter(\get_post_meta($data['ID']), function ($key) {
-            return !preg_match('/^_(.+)/', $key);
+            return ! preg_match('/^_(.+)/', $key);
         }, ARRAY_FILTER_USE_KEY);
 
         $data['meta'] = array_map(function ($item) {
             if (is_array($item) and (1 === count($item))) {
                 return \maybe_unserialize($item[0]);
             }
+
             return \maybe_unserialize($item);
         }, $data['meta']);
 
@@ -93,9 +94,10 @@ class OpenWOB
 
     public function field(string $field, $default = null)
     {
-        if (!array_key_exists($field, $this->data)) {
+        if (! array_key_exists($field, $this->data)) {
             return $default;
         }
+
         return trim($this->data[$field]);
     }
 
@@ -107,28 +109,30 @@ class OpenWOB
         // @assert $key is a non-empty string
         // @assert $data is a loopable array
         // @otherwise return $default value
-        if (!is_string($key) || empty($key) || !count($data)) {
+        if (! is_string($key) || empty($key) || ! count($data)) {
             return $default;
         }
 
         // @assert $key contains a dot notated string
         if (false !== strpos($key, $separator)) {
             $keys = array_map(function ($key) {
-                if (!preg_match('/^wob_/', $key)) {
+                if (! preg_match('/^wob_/', $key)) {
                     return sprintf('%s_%s', 'wob', $key);
                 }
+
                 return $key;
             }, explode($separator, $key));
 
             foreach ($keys as $innerKey) {
                 // @assert $data[$innerKey] is available to continue
                 // @otherwise return $default value
-                if (!array_key_exists($innerKey, $data)) {
+                if (! array_key_exists($innerKey, $data)) {
                     return $default;
                 }
 
                 $data = $data[$innerKey];
             }
+
             return $data;
         }
 

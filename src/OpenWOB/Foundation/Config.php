@@ -51,7 +51,7 @@ class Config
      */
     public function get(string $setting, $default = '')
     {
-        if (!$setting) {
+        if (! $setting) {
             return $default;
         }
 
@@ -91,7 +91,7 @@ class Config
                 // If the key doesn't exist at this depth, we will just create an empty array
                 // to hold the next value, allowing us to create the arrays to hold final
                 // values at the correct depth. Then we'll keep digging into the array.
-                if (!isset($tempItems[$part]) || !is_array($tempItems[$part])) {
+                if (! isset($tempItems[$part]) || ! is_array($tempItems[$part])) {
                     $tempItems[$part] = [];
                 }
                 $tempItems = &$tempItems[$part];
@@ -131,6 +131,7 @@ class Config
     public function setPath(string $path): self
     {
         $this->path = $path;
+
         return $this;
     }
 
@@ -142,6 +143,7 @@ class Config
     public function setProtectedNodes($nodes = []): self
     {
         $this->protectedNodes = $nodes;
+
         return $this;
     }
 
@@ -169,6 +171,7 @@ class Config
                 // If its in the first directory just add the file.
                 if ($path == $this->path) {
                     $this->items[$name] = $value;
+
                     continue;
                 }
 

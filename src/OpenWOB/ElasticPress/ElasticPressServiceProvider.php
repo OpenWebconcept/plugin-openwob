@@ -10,11 +10,12 @@ class ElasticPressServiceProvider extends ServiceProvider
 {
     /**
      * Register the service provider.
+     *
      * @throws Exception
      */
     public function register()
     {
-        if (!class_exists('\ElasticPress\Elasticsearch')) {
+        if (! class_exists('\ElasticPress\Elasticsearch')) {
             return;
         }
 
@@ -25,6 +26,7 @@ class ElasticPressServiceProvider extends ServiceProvider
                 'singular' => esc_html__('openwob-item', 'elasticpress'),
                 'plural'   => esc_html__('openwob-items', 'elasticpress'),
             ];
+
             return $labels;
         });
 

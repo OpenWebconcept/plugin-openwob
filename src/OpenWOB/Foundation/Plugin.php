@@ -30,7 +30,7 @@ class Plugin
     /**
      * Path to the root of the plugin.
      *
-     * @var string $rootPath
+     * @var string
      */
     protected $rootPath;
 
@@ -141,7 +141,7 @@ class Plugin
 
             $service = new $service($this);
 
-            if (!$service instanceof ServiceProvider) {
+            if (! $service instanceof ServiceProvider) {
                 throw new \Exception('Provider must be an instance of ServiceProvider.');
             }
 

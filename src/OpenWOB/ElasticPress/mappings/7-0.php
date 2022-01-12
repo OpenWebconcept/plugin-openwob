@@ -2,7 +2,6 @@
 /**
  * Elasticsearch mapping for ES 7.0
  */
-
 if (! defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
@@ -13,7 +12,9 @@ return [
          * Filter number of Elasticsearch shards to use in indices
          *
          * @hook ep_default_index_number_of_shards
+         *
          * @param  {int} $shards Number of shards
+         *
          * @return {int} New number
          */
         'index.number_of_shards'           => apply_filters('ep_default_index_number_of_shards', 5),
@@ -21,7 +22,9 @@ return [
          * Filter number of Elasticsearch replicas to use in indices
          *
          * @hook ep_default_index_number_of_replicas
+         *
          * @param  {int} $replicas Number of replicas
+         *
          * @return {int} New number
          */
         'index.number_of_replicas'         => apply_filters('ep_default_index_number_of_replicas', 1),
@@ -29,7 +32,9 @@ return [
          * Filter Elasticsearch total field limit for posts
          *
          * @hook ep_total_field_limit
+         *
          * @param  {int} $number Number of fields
+         *
          * @return {int} New number
          */
         'index.mapping.total_fields.limit' => apply_filters('ep_total_field_limit', 5000),
@@ -37,7 +42,9 @@ return [
          * Filter whether Elasticsearch ignores malformed fields or not.
          *
          * @hook ep_ignore_malformed
+         *
          * @param  {bool} $ignore True for ignore
+         *
          * @return {bool} New value
          */
         'index.mapping.ignore_malformed'   => apply_filters('ep_ignore_malformed', true),
@@ -45,7 +52,9 @@ return [
          * Filter Elasticsearch max result window for posts
          *
          * @hook ep_max_result_window
+         *
          * @param  {int} $number Size of result window
+         *
          * @return {int} New number
          */
         'index.max_result_window'          => apply_filters('ep_max_result_window', 1000000),
@@ -53,7 +62,9 @@ return [
          * Filter Elasticsearch maximum shingle difference
          *
          * @hook ep_max_shingle_diff
+         *
          * @param  {int} $number Max difference
+         *
          * @return {int} New number
          */
         'index.max_shingle_diff'           => apply_filters('ep_max_shingle_diff', 8),
@@ -67,8 +78,10 @@ return [
                      * Filter Elasticsearch default language in mapping
                      *
                      * @hook ep_analyzer_language
+                     *
                      * @param  {string} $lang Default language
                      * @param {string} $lang_context Language context
+                     *
                      * @return {string} New language
                      */
                     'language'    => apply_filters('ep_analyzer_language', 'english', 'analyzer_default'),
@@ -100,8 +113,10 @@ return [
                      * Filter Elasticsearch default language in mapping
                      *
                      * @hook ep_analyzer_language
+                     *
                      * @param  {string} $lang Default language
                      * @param {string} $lang_context Language context
+                     *
                      * @return {string} New language
                      */
                     'language' => apply_filters('ep_analyzer_language', 'english', 'filter_ewp_snowball'),

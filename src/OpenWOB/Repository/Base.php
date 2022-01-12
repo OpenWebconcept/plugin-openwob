@@ -101,11 +101,11 @@ abstract class Base
         $args = array_merge($this->queryArgs, [
             'post_type'  => [$this->posttype],
             'meta_query' => [
-                    [
-                        'key'     => 'wob_UUID',
-                        'value'   => $id,
-                        'compare' => 'IN',
-                    ],
+                [
+                    'key'     => 'wob_UUID',
+                    'value'   => $id,
+                    'compare' => 'IN',
+                ],
             ]
         ]);
 
@@ -245,6 +245,7 @@ abstract class Base
     {
         if (\property_exists(\get_called_class(), 'model')) {
             $model = $this->getModel();
+
             return (new $model($post->to_array()))->transform();
         }
 

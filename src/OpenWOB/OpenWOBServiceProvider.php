@@ -37,6 +37,7 @@ class OpenWOBServiceProvider extends ServiceProvider
         }
 
         $post['post_title'] = isset($_POST['wob_Titel']) ? \esc_attr($_POST['wob_Titel']) : $post['post_title'];
+
         return $post;
     }
 
@@ -84,15 +85,16 @@ class OpenWOBServiceProvider extends ServiceProvider
      * Add default order.
      *
      * @param WP_Query $query
+     *
      * @return void
      */
     public function orderByPublishedDate(WP_Query $query)
     {
-        if (!is_admin()) {
+        if (! is_admin()) {
             return;
         }
 
-        if (!$query->is_main_query() || self::POSTTYPE != $query->get('post_type')) {
+        if (! $query->is_main_query() || self::POSTTYPE != $query->get('post_type')) {
             return;
         }
 
