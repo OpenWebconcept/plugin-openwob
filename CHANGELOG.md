@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.0.7
+
+- Fix: don't overwrite UUID after generation
+
 ## Version 1.0.6
 
 - Chore: add per_page as alias for limit

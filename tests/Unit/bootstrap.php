@@ -24,7 +24,7 @@ define('OW_SLUG', basename(__FILE__, '.php'));
 define('OW_LANGUAGE_DOMAIN', OW_SLUG);
 define('OW_DIR', basename(__DIR__));
 define('OW_ROOT_PATH', __DIR__);
-define('OW_VERSION', '1.0.6');
+define('OW_VERSION', '1.0.7');
 
 /**
  * Bootstrap WordPress Mock.
