@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yard\OpenWOB;
 
@@ -22,6 +24,7 @@ class OpenWOBServiceProvider extends ServiceProvider
         $this->plugin->loader->addAction('wp_insert_post_data', $this, 'fillTitle', 10, 1);
         $this->plugin->loader->addAction('wp_after_insert_post', $this, 'updateSavedPost', 10, 3);
         $this->plugin->loader->addAction('init', $this, 'registerPostTypes');
+        $this->plugin->loader->addAction('init', $this, 'registerTaxonomies');
         $this->plugin->loader->addAction('pre_get_posts', $this, 'orderByPublishedDate');
         $this->plugin->loader->addFilter('rwmb_meta_boxes', $this, 'registerMetaboxes', 10, 1);
         (new RestAPIServiceProvider($this->plugin))->register();
@@ -54,7 +57,7 @@ class OpenWOBServiceProvider extends ServiceProvider
         $timestamp = $information['wob_Tijdstip_laatste_wijziging']['timestamp'] ?? null;
 
         \update_post_meta($post, 'updated_at', $timestamp);
-        if ( !\metadata_exists('post', $post, 'wob_UUID' ) ) {
+        if (! \metadata_exists('post', $post, 'wob_UUID')) {
             \update_post_meta($post, 'wob_UUID', sprintf(
                 '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
                 mt_rand(0, 0xffff),
@@ -111,7 +114,7 @@ class OpenWOBServiceProvider extends ServiceProvider
     /**
      * register custom posttypes.
      */
-    public function registerPostTypes()
+    public function registerPostTypes(): void
     {
         \register_post_type(self::POSTTYPE, [
             'label'              => 'OpenWOB',
@@ -125,7 +128,20 @@ class OpenWOBServiceProvider extends ServiceProvider
             'has_archive'        => false,
             'hierarchical'       => false,
             'menu_position'      => null,
-            'supports'           => [ 'author', 'excerpt']
+            'supports'           => ['author', 'excerpt']
         ]);
+    }
+
+    public function registerTaxonomies(): void
+    {
+        $taxonomies = $this->plugin->config->get('taxonomies') ?? [];
+
+        if (empty($taxonomies)) {
+            return;
+        }
+
+        foreach ($taxonomies as $taxonomyName => $taxonomy) {
+            \register_taxonomy($taxonomyName, $taxonomy['object_types'], $taxonomy['args']);
+        }
     }
 }

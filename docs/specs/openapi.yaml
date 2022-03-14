@@ -1,110 +1,106 @@
 openapi: 3.0.0
 info:
-  title: 'OpenWebConcept OpenWOB API'
-  termsOfService: 'https://www.openwebconcept.nl/'
-  contact:
-    name: OpenWebConcept
-    url: 'https://www.openwebconcept.nl/'
-    email: info@openwebconcept.nl
-  license:
-    name: OpenWebConcept
-    url: 'https://www.openwebconcept.nl/'
-  version: 1.0.7
-  x-logo:
-    url: 'https://openwebconcept.nl/wp-content/themes/openwebconcept/assets/src/images/logo-dark.png'
-  description:
-    $ref: ../chapters/description.md
-  x-externalDocs:
-    description: 'Find out how to create Github repo for your OpenAPI spec.'
-    url: 'https://openwebconcept.bitbucket.io/openwob/'
+    title: "OpenWebConcept OpenWOB API"
+    termsOfService: "https://www.openwebconcept.nl/"
+    contact:
+        name: OpenWebConcept
+        url: "https://www.openwebconcept.nl/"
+        email: info@openwebconcept.nl
+    license:
+        name: OpenWebConcept
+        url: "https://www.openwebconcept.nl/"
+    version: 1.0.8
+    x-logo:
+        url: "https://openwebconcept.nl/wp-content/themes/openwebconcept/assets/src/images/logo-dark.png"
+    description:
+        $ref: ../chapters/description.md
+    x-externalDocs:
+        description: "Find out how to create Github repo for your OpenAPI spec."
+        url: "https://openwebconcept.bitbucket.io/openwob/"
 servers:
-  -
-    url: 'https://{site}/wp-json/yard/openwob/v1'
-    description: ''
+    - url: "https://{site}/wp-json/yard/openwob/v1"
+      description: ""
 paths:
-  /items:
-    get:
-      tags:
-        - API
-      description: 'Get all openWOB items'
-      operationId: getItems
-      parameters:
-        -
-          name: 'filter[]'
-          in: query
-          description: 'Filter items by date of modification'
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-            pattern: 'updatedAfterDate:YYYY-MM-DD'
-          example: 'updatedAfterDate:2021-03-01'
-        -
-          name: 'filter[]'
-          in: query
-          description: 'Filter items by date of publication'
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-            pattern: 'publishedAfterDate:YYYY-MM-DD'
-          example: 'publishedAfterDate:2021-03-01'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Response'
-  '/items/{UUID}':
-    get:
-      tags:
-        - API
-      description: 'Get openWOB item by UUID'
-      operationId: getItem
-      parameters:
-        -
-          name: UUID
-          in: path
-          description: 'UUID of OpenWOB item'
-          required: true
-          schema:
-            type: string
-            format: uuid
-          example: /36aea3a9-e1d8-407a-8ea3-4617856f97fc
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/OpenWOB'
-              examples:
-                '200':
-                  summary: ''
-                  value: { name: 1 }
-        '404':
-          description: 'OpenWOB not found'
-          content:
-            application/json:
-              schema:
-                type: object
+    /items:
+        get:
+            tags:
+                - API
+            description: "Get all openWOB items"
+            operationId: getItems
+            parameters:
+                - name: "filter[]"
+                  in: query
+                  description: "Filter items by date of modification"
+                  required: false
+                  schema:
+                      type: array
+                      items:
+                          type: string
+                      pattern: "updatedAfterDate:YYYY-MM-DD"
+                  example: "updatedAfterDate:2021-03-01"
+                - name: "filter[]"
+                  in: query
+                  description: "Filter items by date of publication"
+                  required: false
+                  schema:
+                      type: array
+                      items:
+                          type: string
+                      pattern: "publishedAfterDate:YYYY-MM-DD"
+                  example: "publishedAfterDate:2021-03-01"
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Response"
+    "/items/{UUID}":
+        get:
+            tags:
+                - API
+            description: "Get openWOB item by UUID"
+            operationId: getItem
+            parameters:
+                - name: UUID
+                  in: path
+                  description: "UUID of OpenWOB item"
+                  required: true
+                  schema:
+                      type: string
+                      format: uuid
+                  example: /36aea3a9-e1d8-407a-8ea3-4617856f97fc
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/OpenWOB"
+                            examples:
+                                "200":
+                                    summary: ""
+                                    value: { name: 1 }
+                "404":
+                    description: "OpenWOB not found"
+                    content:
+                        application/json:
+                            schema:
+                                type: object
 components:
-  schemas:
-    OpenWOB:
-      title: 'OpenWOB model'
-      type: object
-    repository: {  }
-    Response:
-      properties:
-        WOBverzoeken:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenWOB'
-        pagination:
-          type: array
-          items: {  }
-        query_parameters: {  }
-      type: object
+    schemas:
+        OpenWOB:
+            title: "OpenWOB model"
+            type: object
+        repository: {}
+        Response:
+            properties:
+                WOBverzoeken:
+                    type: array
+                    items:
+                        $ref: "#/components/schemas/OpenWOB"
+                pagination:
+                    type: array
+                    items: {}
+                query_parameters: {}
+            type: object

@@ -641,3 +641,43 @@ msgstr "Verbindingstype \"%s\" bestaat niet"
 
 #~ msgid "This link does not work, go to our website: <a href=\"%s\">%s</a>"
 #~ msgstr "Deze link werkt niet, bekijk onze website: <a href=\"%s\">%s</a>"
+
+#: config/taxonomies.php:13
+msgid "Types"
+msgstr "Typen"
+
+#: config/taxonomies.php:14
+msgid "Type"
+msgstr "Type"
+
+#: config/taxonomies.php:15
+msgid "Search types"
+msgstr "Zoek typen"
+
+#: config/taxonomies.php:16
+msgid "All types"
+msgstr "Alle typen"
+
+#: config/taxonomies.php:17
+msgid "Edit type"
+msgstr "Wijzig type"
+
+#: config/taxonomies.php:8
+msgid "View type"
+msgstr "Bekijk type"
+
+#: config/taxonomies.php:19
+msgid "Update type"
+msgstr "Type bijwerken"
+
+#: config/taxonomies.php:20
+msgid "Add type"
+msgstr "Type toevoegen"
+
+#: config/taxonomies.php:21
+msgid "New type name"
+msgstr "Nieuwe type naam"
+
+#: config/taxonomies.php:22
+msgid "No types found"
+msgstr "Geen typen gevonden"

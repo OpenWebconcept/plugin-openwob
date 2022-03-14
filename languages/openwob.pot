@@ -199,3 +199,43 @@ msgstr ""
 #, php-format
 msgid "Connection type \"%s\" does not exist"
 msgstr ""
+
+#: config/taxonomies.php:13
+msgid "Types"
+msgstr ""
+
+#: config/taxonomies.php:14
+msgid "Type"
+msgstr ""
+
+#: config/taxonomies.php:15
+msgid "Search types"
+msgstr ""
+
+#: config/taxonomies.php:16
+msgid "All types"
+msgstr ""
+
+#: config/taxonomies.php:17
+msgid "Edit type"
+msgstr ""
+
+#: config/taxonomies.php:8
+msgid "View type"
+msgstr ""
+
+#: config/taxonomies.php:19
+msgid "Update type"
+msgstr ""
+
+#: config/taxonomies.php:20
+msgid "Add type"
+msgstr ""
+
+#: config/taxonomies.php:21
+msgid "New type name"
+msgstr ""
+
+#: config/taxonomies.php:22
+msgid "No types found"
+msgstr ""

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.0.8
+
+- Feat: add config taxonomies and register per CPT.
+
 ## Version 1.0.7
 
 - Fix: don't overwrite UUID after generation
