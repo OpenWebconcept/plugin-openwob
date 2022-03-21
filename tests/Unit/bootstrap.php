@@ -26,7 +26,7 @@ define('OW_SLUG', basename(__FILE__, '.php'));
 define('OW_LANGUAGE_DOMAIN', OW_SLUG);
 define('OW_DIR', basename(__DIR__));
 define('OW_ROOT_PATH', __DIR__);
-define('OW_VERSION', '1.0.8');
+define('OW_VERSION', '1.0.9');
 
 /**
  * Bootstrap WordPress Mock.
@@ -38,7 +38,7 @@ $GLOBALS[OW_LANGUAGE_DOMAIN] = [
     'active_plugins' => [OW_DIR . '/' . OW_FILE],
 ];
 
-if (! function_exists('get_echo')) {
+if (!function_exists('get_echo')) {
 
     /**
      * Capture the echo of a callable function.

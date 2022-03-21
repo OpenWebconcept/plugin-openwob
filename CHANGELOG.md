@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.0.9
+
+- Fix: Elasticpress filter 'epwr_decay' expects float value instead of int.
+
 ## Version 1.0.8
 
 - Feat: add config taxonomies and register per CPT.

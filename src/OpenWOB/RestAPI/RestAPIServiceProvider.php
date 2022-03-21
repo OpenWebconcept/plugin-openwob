@@ -13,7 +13,7 @@ use Yard\OpenWOB\Foundation\ServiceProvider;
  *  ),
  *  @OA\Info(
  *    title="OpenWebConcept OpenWOB API",
- *    version="1.0.8",
+ *    version="1.0.9",
  *    termsOfService="https://www.openwebconcept.nl/",
  *    @OA\Contact(
  *      name="OpenWebConcept",
