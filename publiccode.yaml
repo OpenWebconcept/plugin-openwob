@@ -1,0 +1,21 @@
+name: "plugin-openwob"
+
+publiccodeYmlVersion: 1.0
+url: "https://github.com/OpenWebconcept/plugin-openwob"
+
+platforms:
+  - "web"
+
+categories:
+  - "application-development"
+
+softwareType: "softwareAddon"
+
+description:
+  localisedName: "OpenWOB"
+  shortDescription: "WOB items are public documents which are provided by the (local)government."
+  longDescription: "WOB items are public documents which are provided by the (local)government."
+
+nl:
+  commonground:
+    layerType: "service"
