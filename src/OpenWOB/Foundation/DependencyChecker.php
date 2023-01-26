@@ -4,39 +4,23 @@ namespace Yard\OpenWOB\Foundation;
 
 class DependencyChecker
 {
-    /**
-     * Plugins that need to be checked for.
-     *
-     * @var array
-     */
-    private $dependencies = [];
-
-    /**
-     * Build up array of failed plugins, either because
-     * they have the wrong version or are inactive.
-     *
-     * @var array
-     */
-    private $failed = [];
-
-    /** @var array */
-    private $suggestions = [];
-
-    /** @var DismissableAdminNotice */
-    protected $dismissableAdminNotice;
+    protected DismissableAdminNotice $dismissableAdminNotice;
+    private array $dependencies = []; // Plugins that need to be checked for.
+    private array $suggestions = [];
+    private array $failed = []; // Build up array of failed plugins.
 
     /**
      * Determine which plugins need to be present.
      *
+     * @param DismissableAdminNotice $dismissableAdminNotice
      * @param array $dependencies
      * @param array $suggestions
-     * @param DismissableAdminNotice $dismissableAdminNotice
      */
-    public function __construct(array $dependencies, array $suggestions = [], DismissableAdminNotice $dismissableAdminNotice)
+    public function __construct(DismissableAdminNotice $dismissableAdminNotice, array $dependencies, array $suggestions = [])
     {
+        $this->dismissableAdminNotice = $dismissableAdminNotice;
         $this->dependencies = $dependencies;
         $this->suggestions = $suggestions;
-        $this->dismissableAdminNotice = $dismissableAdminNotice;
     }
 
     /**

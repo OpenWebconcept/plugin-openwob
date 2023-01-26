@@ -11,7 +11,6 @@ namespace Yard\OpenWOB\Foundation;
  */
 class Plugin
 {
-
     /**
      * Name of the plugin.
      *
@@ -76,9 +75,9 @@ class Plugin
     public function boot(): bool
     {
         $dependencyChecker = new DependencyChecker(
+            new DismissableAdminNotice,
             $this->config->get('dependencies.required'),
-            $this->config->get('dependencies.suggested'),
-            new DismissableAdminNotice
+            $this->config->get('dependencies.suggested')
         );
 
         if ($dependencyChecker->hasFailures()) {

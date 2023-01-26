@@ -37,7 +37,7 @@ return [
         [
             'type'    => 'plugin',
             'label'   => 'ElasticPress',
-            'version' => '3.6.0',
+            'version' => '4.0.0',
             'file'    => 'elasticpress/elasticpress.php',
         ]
     ]
