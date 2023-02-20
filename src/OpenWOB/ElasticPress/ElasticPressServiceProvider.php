@@ -15,6 +15,10 @@ class ElasticPressServiceProvider extends ServiceProvider
      */
     public function register()
     {
+		if (\is_plugin_active('yard-elasticsearch/yard-elasticsearch.php')) {
+			return;
+		}
+
         if (! class_exists('\ElasticPress\Elasticsearch')) {
             return;
         }
