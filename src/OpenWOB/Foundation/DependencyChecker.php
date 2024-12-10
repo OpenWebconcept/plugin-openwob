@@ -166,6 +166,10 @@ class DependencyChecker
             include_once ABSPATH . 'wp-admin/includes/plugin.php';
         }
 
+        if (! empty($dependency['alt_file']) && is_plugin_active($dependency['alt_file'])) {
+            $dependency['file'] = $dependency['alt_file'];
+        }
+
         if (! $this->checkPluginActive($dependency)) {
             $this->markFailed($dependency, __('Inactive', OW_LANGUAGE_DOMAIN));
 

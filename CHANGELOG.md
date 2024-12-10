@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## Version 2.0.2
+
+- (feat): Check alternative filename for MetaBox Group dependency
+
+## Version 2.0.1
+
+- (feat): disable ES indexable when yard-elasticsearch active
+
 ## Version 2.0.0
 
 - Chore: clean-up, php8 and compliant with new version of ElasticPress.
