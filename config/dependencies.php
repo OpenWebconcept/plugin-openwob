@@ -28,11 +28,11 @@ return [
             'file'     => 'metabox-group/meta-box-group.php',
 	        'alt_file' => 'meta-box-group/meta-box-group.php',
         ],
-        [
-            'type'  => 'class',
-            'label' => '<a href="https://github.com/johnbillion/extended-cpts" target="_blank">Extended CPT library</a>',
-            'name'  => 'Extended_CPT',
-        ]
+		[
+			'type'  => 'function',
+			'label' => '<a href="https://github.com/johnbillion/extended-cpts" target="_blank">Extended CPT library</a>',
+			'name'  => 'register_extended_post_type'
+		]
     ],
     'suggested' => [
         [

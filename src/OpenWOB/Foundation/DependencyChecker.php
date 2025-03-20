@@ -40,6 +40,10 @@ class DependencyChecker
                     $this->checkPlugin($dependency);
 
                     break;
+				case 'function':
+					$this->checkFunction($dependency);
+
+					break;
             }
         }
 
@@ -198,6 +202,17 @@ class DependencyChecker
             return (true === $item);
         })));
     }
+
+
+	/**
+	 * Checks if required function exists.
+	 */
+	private function checkFunction(array $dependency): void
+	{
+		if (! function_exists($dependency['name'])) {
+			$this->markFailed($dependency, __('Function does not exist:', OW_LANGUAGE_DOMAIN) . ' <b>' . $dependency['name'] . '</b>');
+		}
+	}
 
     /**
      * Checks the installed version of the plugin.
