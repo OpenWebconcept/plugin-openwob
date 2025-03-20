@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 2.0.3
+
+- (fic): extended cpt dependency check
+
 ## Version 2.0.2
 
 - (feat): Check alternative filename for MetaBox Group dependency
